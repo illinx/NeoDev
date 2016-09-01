@@ -1,0 +1,65 @@
+See your relevant section for how to compile NeoCD/SDL
+
+These instructions are a quick guide to building neocd/sdl and in no way
+are guaranteed to be very accurate or helpful.
+
+Sorry for the poor documentation, but if you have any experience of compiling 
+programs in a gnu environment then I hope you should be able to follow this well
+enough to build.
+
+Fosters
+(neocdsdl at yahoo dot com)
+
+
+
+Windows
+=======
+You will require
+
+mingw  (www.mingw.org)
+msys   (www.mingw.org)
+SDL development libraries for mingw  (www.libsdl.org)
+nasm (nasm.sourceforge.net)
+
+
+Extract the Neocd/SDL sources somewhere
+
+Install msys and mingw.
+Copy nasmw.exe into one of the bin directories in the msys/mingw directory.
+
+Unpack the SDL development library follow the installation instructions for it.
+
+change directory to the neocd/sdl sources
+
+type:
+make mingw
+
+and neocd should build
+
+
+
+
+
+Linux
+=====
+SDL source  (www.libsdl.org)
+nasm (nasm.sourceforge.net)
+
+Install nasm.
+
+To get the cd audio to work I have had to modify SDL slightly, so you will have
+to rebuild it from source.  Instructions for that should be found in the SDL
+distribution.
+
+The change is in <SDL dir>/src/cdrom/linux/SDL_syscdrom.c
+change line 124 to:
+	cdfd = open(drive, (O_RDONLY|O_NONBLOCK), 0);
+	
+change line 385 to:
+	return(open(SDL_cdlist[drive], (O_RDONLY|O_NONBLOCK), 0));
+	
+build and install the SDL library.
+
+cd to neocd/sdl source directory and type "make linux"
+
+If everything went ok you should have a new neocd executable.

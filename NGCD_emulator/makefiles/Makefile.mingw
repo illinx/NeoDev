@@ -1,0 +1,63 @@
+############################################
+#                                          #
+# NeoCD Makefile for MINGW32               #
+#                                          #
+############################################
+# Uses GNU make                            #
+############################################
+
+#C-Programs
+AR = ar
+CC= gcc
+RC= windres
+LD= gcc
+ASM= nasmw
+RM= rm -f
+RMDIR= rm -rf
+MKDIR= @mkdir -p
+PACKER= upx -9
+
+RCFLAGS=-O coff --include-dir=src/win32
+
+#Executable File Extension
+EXE=.exe 
+
+#SDL and ZLIB locations (Use forward slashes)
+SDL_INC_DIR= -I/usr/local/include/SDL -Dmain=SDL_main
+
+#Compiler Flags
+CDEFS= -DMMX -D_REENTRANT -DWIN32 -D__ASMPREFIX__ -DINLINE="static inline"
+CFLAGS= -march=athlon -O3 -fomit-frame-pointer -fstrict-aliasing \
+	-Wall -Wno-sign-compare -Wunused \
+	-Wpointer-arith -Wbad-function-cast -Wcast-align -Waggregate-return \
+	-Wshadow -Wstrict-prototypes -Wundef \
+	-Wformat-security -Wwrite-strings \
+	-Wdisabled-optimization -funsigned-char
+#enable for profiling
+#CFLAGS= -O3 -pg
+
+INCLUDES= -I. ${SDL_INC_DIR}
+ASMFLAGS= -f win32
+ASMDEFS= -D__DJGPP__
+
+
+#Linker Flags
+LDFLAGS= -mwindows
+
+# Library files
+EXTLIBS = -L/usr/local/lib -lmingw32 -lSDLmain -lSDL -mwindows -luser32 -lgdi32 -lwinmm -ldxguid
+EXTOBJS = obj/win32/neocd.res
+
+# CD-ROM code
+OSD_CDROM=obj/cdrom/win32.o
+
+#include common Makefile
+include src/Makefile.common
+
+obj/%.res:	src/%.rc
+		$(RC) $(RCFLAGS) -o $@ $<
+
+
+
+
+

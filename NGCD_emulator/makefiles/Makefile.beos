@@ -1,0 +1,50 @@
+############################################
+#                                          #
+# NeoCD Makefile for BeOS                  #
+#                                          #
+############################################
+# Uses GNU make                            #
+############################################
+
+#C-Programs
+AR = ar
+CC= gcc
+RC= @rc
+CPP=g++
+#LD= gcc -static
+LD=g++
+ASM= nasm
+RM= rm -f
+RMDIR= rm -rf
+MKDIR= @mkdir -p
+PACKER= upx
+
+#uncomment if you have upx installed to compress NeoCD executable.
+#COMPRESS= @upx neocd
+
+#SDL location 
+#SDL_INC_DIR=  -I/usr/include/SDL
+
+#Compiler Flags
+CDEFS= -DMMX -D_REENTRANT -DINLINE="static"
+CFLAGS= -O3 -Wall -fomit-frame-pointer -fstrict-aliasing -funsigned-char
+
+
+INCLUDES= -I/boot/home/config/include/SDL
+ASMFLAGS= -f elf
+ASMDEFS=
+
+# Library files
+LIBS = obj/memory.a obj/video.a obj/input.a obj/cdrom.a obj/cdaudio.a obj/sound.a obj/ym2610.a
+EXTLIBS = -L/boot/home/config/lib -lSDL -lbe
+
+EXTOBJS = obj/swab.o
+
+# CD-ROM code
+OSD_CDROM=obj/cdrom/beos.o
+
+#include common Makefile
+include src/Makefile.common
+
+obj/cdrom/beos.o:	src/cdrom/beos.cc
+	$(CPP) $(CDEFS) $(INCLUDES) -c $< -o$@

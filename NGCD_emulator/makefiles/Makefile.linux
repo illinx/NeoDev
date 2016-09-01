@@ -1,0 +1,51 @@
+############################################
+#                                          #
+# NeoCD Makefile for Linux                 #
+#                                          #
+############################################
+# Uses GNU make                            #
+############################################
+
+#C-Programs
+AR = ar
+CC= gcc
+LD= gcc -static
+#LD=gcc
+ASM= nasm
+RM= rm -f
+RMDIR= rm -rf
+MKDIR= @mkdir -p
+PACKER= upx
+
+#Executable File Extension
+EXE= 
+
+#uncomment if you have upx installed to compress NeoCD executable.
+COMPRESS= @upx neocd$(EXE)
+
+#SDL locations (Use forward slashes)
+SDL_INC_DIR=  -I/usr/include/SDL
+
+#Compiler Flags
+CDEFS= -DMMX -D_REENTRANT -DINLINE="static inline" -DLOWERCASEFILES
+CFLAGS= -O3 -fomit-frame-pointer -fstrict-aliasing \
+        -Wall -Wno-sign-compare -Wunused \
+	-Wpointer-arith -Wbad-function-cast -Wcast-align -Waggregate-return \
+	-Wshadow -Wstrict-prototypes -Wundef \
+	-Wformat-security -Wwrite-strings \
+	-Wdisabled-optimization -funsigned-char
+
+#enable for profiling
+#CFLAGS= -O3 -pg
+INCLUDES= -I. ${SDL_INC_DIR}
+ASMFLAGS= -f elf
+ASMDEFS=
+		
+# Library files
+EXTLIBS = -L/usr/lib -Wl,-rpath,/usr/lib -lSDL -lpthread -lm -ldl -L/usr/X11R6/lib -lX11 -lXext
+
+# CD-ROM code
+OSD_CDROM=obj/cdrom/linux.o
+
+#include common Makefile
+include src/Makefile.common

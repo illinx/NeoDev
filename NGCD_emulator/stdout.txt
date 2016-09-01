@@ -1,0 +1,21 @@
+NeoCD/SDL 0.3.1
+Compiled on: May 14 2004 16:46:13
+NEOGEO: Allocating memory...
+PRG (2MB) ... OK!
+SPR (4MB) ... OK!
+ROM (512kb) ... OK!
+FIX (128kb) ... OK!
+PCM (1Mb) ... OK!
+
+Detecting CD-ROM drives... 2 CD-ROM drives found
+Trying D:\
+Trying E:\
+Found Neogeo CD in drive: E:\
+CD Audio OK!
+Error: No Disc in drive
+Loading File: PB_FIX.FIX 00 00000000
+Loading File: PB_CHR.SPR 00 00000000
+Loading File: PUZZLE.Z80 00 00000000
+Loading File: PUZZLE.PCM 00 00000000
+Loading File: PB_PROG.PRG 00 00000000
+NEOGEO: System Shutdown.

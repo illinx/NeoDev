@@ -1,0 +1,80 @@
+# Object files
+MAINOBJS = obj/neocd.o obj/z80/z80.oa obj/z80/z80intrf.o obj/pd4990a.o
+LIBS = src/mc68000/mc68000.a obj/memory.a obj/video.a obj/input.a obj/cdrom.a obj/cdaudio.a obj/sound.a obj/ym2610.a
+
+# Make rules
+all: mkdir neocd$(EXE)
+
+neocd$(EXE):	$(MAINOBJS) $(LIBS) $(EXTOBJS)
+		$(LD) $(LDFLAGS) $(CFLAGS) $(MAINOBJS) $(EXTOBJS) $(LIBS) $(EXTLIBS) -o $@
+
+# M68000 emulation
+src/mc68000/mc68000.a:
+	cd src/mc68000 && $(MAKE) CC="$(CC)"
+
+
+# Z80 emulation (C version)
+obj/z80/z80.o:	obj/z80/z80.c
+	$(CC) $(CDEFS) $(INCLUDES) $(DEBUGDEF) $(CFLAGS) -c $< -o$@
+
+obj/z80/z80.c:	src/z80/makez80.c obj/z80/mz80.h
+	$(CC) -o obj/z80/makez80$(EXE) $<
+	obj/z80/makez80$(EXE) $@ -s -c
+
+obj/z80/mz80.h:	src/z80/mz80.h
+	cp -p $< $@
+
+
+# Z80 emulation (ASM version)
+obj/z80/z80.asm:	src/z80/makez80.c
+	$(CC) -o obj/z80/makez80$(EXE) $<
+	obj/z80/makez80$(EXE) $@ -l -s -x86
+
+obj/z80/z80.oa:	obj/z80/z80.asm
+	$(ASM) -o $@ $(ASMFLAGS) $(ASMDEFS) $<
+
+
+src/%.asm:
+
+obj/%.o:	src/%.c src/neocd.h
+		$(CC) $(CDEFS) $(INCLUDES) $(DEBUGDEF) $(CFLAGS) -c $< -o$@
+
+obj/%.oa:	src/%.asm
+		$(ASM) -o $@ $(ASMFLAGS) $(ASMDEFS) $<
+
+obj/%.a:
+		$(AR) -r $@ $^
+
+
+# Rules to manage files
+pack:		neocd
+		$(PACKER) neocd
+
+mkdir:
+		$(MKDIR) obj
+		$(MKDIR) obj/mc68000
+		$(MKDIR) obj/memory
+		$(MKDIR) obj/cdrom
+		$(MKDIR) obj/video
+		$(MKDIR) obj/cdaudio
+		$(MKDIR) obj/input
+		$(MKDIR) obj/z80
+		$(MKDIR) obj/sound
+		$(MKDIR) obj/win32
+
+clean:
+		cd src/mc68000 && $(MAKE) clean
+		rm -rf obj
+
+# Rules to make libraries
+
+obj/memory.a:	obj/memory/memory.o
+obj/cdrom.a:	obj/cdrom/cdrom.o $(OSD_CDROM)
+obj/video.a:	obj/video/video.o obj/video/2xsai.o obj/video/2xSaImmx.oa obj/video/draw_fix.o
+obj/cdaudio.a:	obj/cdaudio/cdaudio.o
+obj/input.a:	obj/input/input.o
+obj/sound.a:	obj/sound/sound.o obj/sound/streams.o \
+				obj/sound/2610intf.o obj/sound/ay8910.o obj/sound/fm.o \
+				obj/sound/ymdeltat.o obj/sound/timer.o
+
+
