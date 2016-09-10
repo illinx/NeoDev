@@ -34,15 +34,13 @@
 #include "background.h"
 #include "bullets.h"
 #include "enemy.h"
+#include "player.h"
+#include "screen.h"
 
 // pallete information
 extern PALETTE	palettes[];
 
 extern TILEMAP	playership[];
-
-// used to read in the joystick
-DWORD i;
-DWORD joy2;
 
 int lastscore;
 
@@ -87,40 +85,44 @@ void render_playership(int x, int y, int playermoving)
 
 void menu()
 {
-		setpalette(0, 2, (const PPALETTE)&palettes);
-		clear_fix();
-		clear_spr();
-		_vbl_count = 0;
-		do
-		{
-			i = poll_joystick(PORT1, READ_DIRECT);		
-			textoutf(13,6, 0, 0, "FLAPPY FISH");
-			textoutf(8,9, 0, 0, "a game by Jonathan Martin");
-			textoutf(10, 12, 0, 0, "and Angele Poisson!");
-			textoutf(11,15, 0, 0, "Press B to start!");
+	DWORD control_state = 0;
+
+	setpalette(0, 2, (const PPALETTE)&palettes);
+	clear_fix();
+	clear_spr();
+
+	_vbl_count = 0;
+
+	do
+	{
+		control_state = get_controls_direct();		
+		textoutf(13,6, 0, 0, "FLAPPY FISH");
+		textoutf(8,9, 0, 0, "a game by Jonathan Martin");
+		textoutf(10, 12, 0, 0, "and Angele Poisson!");
+		textoutf(11,15, 0, 0, "Press B to start!");
 
 // 			if(lastscore >= 31)
 // 				textoutf(0,27, 0, 0, "Last attempt: COMPLETED GAME!!");
 // 			else
-				textoutf(0,27, 0, 0, "Last attempt: %d fishes traveled", lastscore);
+			textoutf(0,27, 0, 0, "Last attempt: %d fishes traveled", lastscore);
 
-			wait_vbl();
+		wait_vbl();
 
-			set_current_sprite(379);
-			if(_vbl_count % 2 == 0)
-				write_sprite_data(132, 160, 15, 255, 1, 1, (const PTILEMAP)&playership[0]);
-			else
-				write_sprite_data(132, 160, 15, 255, 1, 1, (const PTILEMAP)&playership[2]);
-			set_current_sprite(380);
-			write_sprite_data(148, 160, 15, 255, 1, 1, (const PTILEMAP)&playership[3]);
+		set_current_sprite(379);
+		if(_vbl_count % 2 == 0)
+			write_sprite_data(132, 160, 15, 255, 1, 1, (const PTILEMAP)&playership[0]);
+		else
+			write_sprite_data(132, 160, 15, 255, 1, 1, (const PTILEMAP)&playership[2]);
+		set_current_sprite(380);
+		write_sprite_data(148, 160, 15, 255, 1, 1, (const PTILEMAP)&playership[3]);
 
-		}while(!(i & JOY_B));
+	}while(!(control_state & JOY_B));
 
-		srand(_vbl_count);
+	srand(_vbl_count);
 
-		_vbl_count = 0;
-		clear_fix();
-		clear_spr();
+	_vbl_count = 0;
+	clear_fix();
+	clear_spr();
 }
 
 void get_ready()
@@ -168,35 +170,25 @@ void game_over()
 void game()
 {
 	int playershield = 1;	
-	int x, y;
 	int current_background_frame = 0;
 	int current_obstacle_frame = 0;
-	int playermoving = 0;
+	//int playermoving = 0;
 	//int playerspeed = 1;
-	//static const float fPlayerMass = 10.0f;
-	static const float fAirDrag = 0.99f;
-	static const float fWaterDrag = 0.75f;
-	static const float fGravity = 0.2f;
-	static const float fFlapVelocity = -3.0f;
-	static const float fGravityInvert = 1.0f;
+	int stage = 1;
+	int playerX = 0;
+	int playerY = 0;
 
 	const int freeSpaceAllowedMax = 96;
 	const int freeSpaceAllowedMin = 32;
 	const int freeSpaceAllowedMinusPerStage = 16;
+	int freeSpaceAllowed = freeSpaceAllowedMax;
+
+	initialize_player();
 
 	//char c = 177;
 	//int count = 0;
-	int playerFlapping = 0;
-	int playerWasFlapping = 0;
-	float playerYAxisVelocity = 0.0f;
-	float playerYAxisAcceleration = 0.0f;
-	int stage = 1;
-	int freeSpaceAllowed = freeSpaceAllowedMax;
 	lastscore = 0;
-
-	// Start coordinates for our sprite
-	x = 0;
-	y = 100;
+	
 	// Copy our palette into video hardware, palette no 1
 	setpalette(0, 2, (const PPALETTE)&palettes);
 
@@ -217,88 +209,12 @@ void game()
 	{
 
 		wait_vbl();
-		playermoving = 0;
-		playerWasFlapping = playerFlapping;
-		playerFlapping = 0;
-		i = poll_joystick(PORT1, READ_BIOS);
-		joy2 = i;
-		
-// 		if (i & JOY_UP)
-// 		{
-// 			if(y>-8)
-// 				y-=playerspeed;
-// 			playermoving = 1;
-// 		}
-// 		
-// 		if (i & JOY_DOWN)
-// 		{
-// 			if(y<216)
-// 				y+=playerspeed;
-// 			playermoving = 1;
-// 		}
-// 		
-// 		if (i & JOY_LEFT)
-// 		{
-// 			if(x>-24)
-// 				x-=playerspeed;
-// 			playermoving = 1;
-// 		}
-// 		
-// 		if (i & JOY_RIGHT)
-// 		{
-// 			if(x<304)
-// 				x+=playerspeed;
-// 			playermoving = 1;
-// 		}
 
-		if (i & JOY_START)
-		{
-			x = y = 0;
-		}
-		
-		//i = poll_joystick(PORT1, READ_BIOS);
-		
-// 		if (i & JOY_A)
-// 		{
-// 			fire_new_bullet(x+24, y+2, 5, 0, BULLET_TYPE_PLAYER );
-// 		}
+		update_player();
+		playerX = get_player_pos_x();
+		playerY = get_player_pos_y();
 
-		//are we flapping?
-		if (i & JOY_A)
-		{
-			playerFlapping = 1;
-		}
-
-		//physics update
-		playerYAxisAcceleration = (fGravity * fGravityInvert);
-
-		//integrate
-		playerYAxisVelocity += playerYAxisAcceleration;
-		if (playerFlapping && !playerWasFlapping)
-		{
-			playerYAxisVelocity = (fFlapVelocity * fGravityInvert);
-// 			playerYAxisVelocity += fFlapVelocity;
-// 			if (playerYAxisVelocity < fFlapVelocity)
-// 			{
-// 				playerYAxisVelocity = fFlapVelocity;
-// 			}
-		}
-		playerYAxisVelocity *= fAirDrag;
-		y += playerYAxisVelocity;
-		//y += (playerYAxisVelocity * fAirDrag);
-
-		//clamp to top of screen, don't kill
-		if (y <= SCREEN_BORDER_TOP)
-		{
-			y = SCREEN_BORDER_TOP;
-		}
-
-		if (playerYAxisVelocity <= 0.0f)
-		{
-			playermoving = 1;
-		}
-
-		render_playership(x, y, playermoving);
+		render_playership(playerX, playerY, is_player_moving());
 
 		// increment background frame
 		current_background_frame++;
@@ -315,7 +231,7 @@ void game()
 			freeSpaceAllowed -= freeSpaceAllowedMinusPerStage;
 			freeSpaceAllowed = max(freeSpaceAllowed, freeSpaceAllowedMin);
 		}
-		update_obstacles(current_obstacle_frame, freeSpaceAllowed, x, y, &playershield, &lastscore);
+		update_obstacles(current_obstacle_frame, freeSpaceAllowed, playerX, playerY, &playershield, &lastscore);
 
 		// output stats
 		textoutf(18,27, 0, 0, "stage: %d", stage);
@@ -328,7 +244,7 @@ void game()
 		textoutf(0,27, 0, 0, "SCORE: %d", lastscore);
 
 		// lose?
-		if (y > SCREEN_BORDER_BOTTOM)
+		if (playerY > SCREEN_BORDER_BOTTOM)
 		{
 			playershield = 0;
 		}

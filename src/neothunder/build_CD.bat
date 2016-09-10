@@ -24,6 +24,7 @@ as -m68000 --register-prefix-optional crt0_cd.s -o %NEODEV%\tmp\crt0_cd.o
 @REM Compile program
 gcc -I%NEODEV%\m68k\include -m68000 -O3 -Wall -fomit-frame-pointer -ffast-math -fno-builtin -nostartfiles -nodefaultlibs -D__cd__ -c main.c -o %NEODEV%\tmp\main.o
 gcc -I%NEODEV%\m68k\include -m68000 -O3 -Wall -fomit-frame-pointer -ffast-math -fno-builtin -nostartfiles -nodefaultlibs -D__cd__ -c background.c -o %NEODEV%\tmp\background.o
+gcc -I%NEODEV%\m68k\include -m68000 -O3 -Wall -fomit-frame-pointer -ffast-math -fno-builtin -nostartfiles -nodefaultlibs -D__cd__ -c player.c -o %NEODEV%\player.o
 gcc -I%NEODEV%\m68k\include -m68000 -O3 -Wall -fomit-frame-pointer -ffast-math -fno-builtin -nostartfiles -nodefaultlibs -D__cd__ -c gamelogic.c -o %NEODEV%\tmp\gamelogic.o
 
 @REM "Compile" images
@@ -34,7 +35,7 @@ bin2elf playership.map playership %NEODEV%\tmp\playership.o
 bin2elf bullet.map bullet %NEODEV%\tmp\bullet.o
 
 @REM Link
-gcc -L%NEODEV%\m68k\lib -m68000 -O3 -Wall -fomit-frame-pointer -ffast-math -fno-builtin -nostartfiles -nodefaultlibs -D__cd__ -Wl,-T%NEODEV%\src\system\neocd.x %NEODEV%\tmp\crt0_cd.o %NEODEV%\tmp\main.o %NEODEV%\tmp\background.o %NEODEV%\tmp\gamelogic.o %NEODEV%\tmp\enemies.o %NEODEV%\tmp\palettes.o %NEODEV%\tmp\starfield.o %NEODEV%\tmp\playership.o %NEODEV%\tmp\bullet.o -linput -lvideo -lc -lgcc -o test.o
+gcc -L%NEODEV%\m68k\lib -m68000 -O3 -Wall -fomit-frame-pointer -ffast-math -fno-builtin -nostartfiles -nodefaultlibs -D__cd__ -Wl,-T%NEODEV%\src\system\neocd.x %NEODEV%\tmp\crt0_cd.o %NEODEV%\tmp\main.o %NEODEV%\tmp\background.o %NEODEV%\tmp\player.o %NEODEV%\tmp\gamelogic.o %NEODEV%\tmp\enemies.o %NEODEV%\tmp\palettes.o %NEODEV%\tmp\starfield.o %NEODEV%\tmp\playership.o %NEODEV%\tmp\bullet.o -linput -lvideo -lc -lgcc -o test.o
 
 @REM Pad program rom
 objcopy -O binary test.o test.prg
