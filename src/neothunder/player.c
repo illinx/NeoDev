@@ -13,7 +13,7 @@ void initialize_player()
 	PLAYER_DATA.playerMoving = 0;
 	
 	PLAYER_DATA.posX = 0;
-	PLAYER_DATA.posY = 100;
+	PLAYER_DATA.posY = 50;
 }
 
 int is_player_moving()

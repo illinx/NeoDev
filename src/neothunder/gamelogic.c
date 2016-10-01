@@ -226,7 +226,7 @@ void check_collision_with_player(int i, int playerx, int playery, int *shield)
 		}
 }
 
-void update_obstacles(int frames, int freeSpace, int playerx, int playery, int *shield, int* playerScore)
+void update_obstacles(int iCurrentFrame, int freeSpace, int playerx, int playery, int *shield, int* playerScore)
 {
 	int i, j, p;
 	//int explosionindex=0;
@@ -262,7 +262,7 @@ void update_obstacles(int frames, int freeSpace, int playerx, int playery, int *
 		}
 	}
 
-	if (frames % spawnObstacleEveryNFrames == 0)
+	if (iCurrentFrame % spawnObstacleEveryNFrames == 0)
 	{
 		// empirical value....after 9070 we don't spawn any more enemies, because player has won
 		if(_vbl_count <= 9070)
@@ -272,7 +272,7 @@ void update_obstacles(int frames, int freeSpace, int playerx, int playery, int *
 
 			//textoutf(8,9, 0, 0, "y pos: %d", obstacleTopCapPosition);
 			//clear_fix();
-			//textoutf(8,9, 0, 0, "frames: %d", frames);
+			//textoutf(8,9, 0, 0, "iCurrentFrame: %d", iCurrentFrame);
 
 			//find first unused enemy sprite, draw top cap
 			for(j=0; j<MAX_OBSTACLE_HARDWARE_SPRITES; j++)
@@ -377,7 +377,7 @@ void update_obstacles(int frames, int freeSpace, int playerx, int playery, int *
 // 		// empirical value....after 9070 we don't spawn any more enemies, because player has won
 // 		if(_vbl_count > 9070) break;
 // 		
-//  		if(enemyspritespawn_frame[i] == frames)
+//  		if(enemyspritespawn_frame[i] == iCurrentFrame)
 //  		{
 //  			//find first unused enemy sprite
 //  			for(j=0; j<MAX_OBSTACLE_HARDWARE_SPRITES; j++)

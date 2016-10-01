@@ -32,7 +32,7 @@ extern TILEMAP	starfield[];
 // This number is basically the largest number in the bckspritespawn_frame array
 const int maximum_frame_of_spawn = 1600;
 
-void update_background(int frames)
+void update_background(int iCurrentFrame)
 {
 	int i, j;
 	
@@ -58,7 +58,7 @@ void update_background(int frames)
 	for(i=0; i<BCKSPR_ENTRY_COUNT; i++)
 	{
 		
-		if(bckspritespawn_frame[i] == frames)
+		if(bckspritespawn_frame[i] == iCurrentFrame)
 		{
 			//find first unused background sprite
 			for(j=FIRST_BCK_HARDWARE_SPRITE; j<MAX_BCK_HARDWARE_SPRITES; j++)

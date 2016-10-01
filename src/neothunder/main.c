@@ -99,7 +99,7 @@ void menu()
 		textoutf(13,6, 0, 0, "FLAPPY FISH");
 		textoutf(8,9, 0, 0, "a game by Jonathan Martin");
 		textoutf(10, 12, 0, 0, "and Angele Poisson!");
-		textoutf(11,15, 0, 0, "Press B to start!");
+		textoutf(11,15, 0, 0, "Press A or B to start!");
 
 // 			if(lastscore >= 31)
 // 				textoutf(0,27, 0, 0, "Last attempt: COMPLETED GAME!!");
@@ -116,7 +116,7 @@ void menu()
 		set_current_sprite(380);
 		write_sprite_data(148, 160, 15, 255, 1, 1, (const PTILEMAP)&playership[3]);
 
-	}while(!(control_state & JOY_B));
+	}while(!(control_state & (JOY_A | JOY_B)));
 
 	srand(_vbl_count);
 
@@ -146,25 +146,25 @@ void get_ready()
 
 void game_over()
 {
-		setpalette(0, 2, (const PPALETTE)&palettes);
-		clear_fix();
-		clear_spr();
+	setpalette(0, 2, (const PPALETTE)&palettes);
+	clear_fix();
+	clear_spr();
 
-		srand(_vbl_count);
+	srand(_vbl_count);
 
-		_vbl_count = 0;
-		do
-		{
-			textoutf(13,12, 0, 0, "Game over");
-			textoutf(6,16, 0, 0, "You traveled %d fish years", lastscore);
-			textoutf(9,17, 0, 0, "before you got owned");
-			wait_vbl();
+	_vbl_count = 0;
+	do
+	{
+		textoutf(13,12, 0, 0, "Game over");
+		textoutf(6,16, 0, 0, "You traveled %d fish years", lastscore);
+		textoutf(9,17, 0, 0, "before you got owned");
+		wait_vbl();
 
-		}while(_vbl_count < 300);
+	}while(_vbl_count < 300 && ((get_controls_direct() & JOY_A) == 0));
 
-		_vbl_count = 0;
-		clear_fix();
-		clear_spr();
+	_vbl_count = 0;
+	clear_fix();
+	clear_spr();
 }
 
 void game()
