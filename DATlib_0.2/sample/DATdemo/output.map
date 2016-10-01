@@ -1,0 +1,591 @@
+Archive member included       because of file (symbol)
+
+c:\neodev/m68k/lib/libDATlib.a(DATc.o)
+                              c:\neodev/tmp/main.o (fixPrintf)
+c:\neodev/m68k/lib/libDATlib.a(DATasm.o)
+                              c:\neodev/tmp/main.o (jobMeterSetup)
+c:\neodev/m68k/lib/libDATlib.a(PICTasm.o)
+                              c:\neodev/tmp/main.o (pictureInit)
+c:\neodev/m68k/lib/libDATlib.a(ASasm.o)
+                              c:\neodev/tmp/main.o (aSpriteInit)
+c:\neodev/m68k/lib/libDATlib.a(sprPool.o)
+                              c:\neodev/tmp/main.o (spritePoolInit)
+c:\neodev/m68k/lib/libc.a(stdlib.o)
+                              c:\neodev/tmp/crt0_cd.o (_sbrk_base1)
+c:\neodev/m68k/lib/libc.a(vsprintf.o)
+                              c:\neodev/m68k/lib/libDATlib.a(DATc.o) (vsprintf)
+c:\neodev/m68k/lib/libc.a(memory.o)
+                              c:\neodev/tmp/crt0_cd.o (memset)
+c:\neodev/m68k/lib/libc.a(string.o)
+                              c:\neodev/m68k/lib/libc.a(vsprintf.o) (strnlen)
+c:\neodev/m68k/lib/libgcc.a(__main.o)
+                              c:\neodev/tmp/crt0_cd.o (__do_global_dtors)
+c:\neodev/m68k/lib/libgcc.a(_ctors.o)
+                              c:\neodev/m68k/lib/libgcc.a(__main.o) (__CTOR_LIST__)
+c:\neodev/m68k/lib/libgcc.a(_divsi3.o)
+                              c:\neodev/tmp/main.o (__divsi3)
+c:\neodev/m68k/lib/libgcc.a(_double.o)
+                              c:\neodev/tmp/main.o (__adddf3)
+c:\neodev/m68k/lib/libgcc.a(_exit.o)
+                              c:\neodev/m68k/lib/libgcc.a(__main.o) (_exit_dummy_decl)
+c:\neodev/m68k/lib/libgcc.a(_floatex.o)
+                              c:\neodev/m68k/lib/libgcc.a(_double.o) (_fpCCR)
+c:\neodev/m68k/lib/libgcc.a(_modsi3.o)
+                              c:\neodev/m68k/lib/libc.a(vsprintf.o) (__modsi3)
+c:\neodev/m68k/lib/libgcc.a(_mulsi3.o)
+                              c:\neodev/m68k/lib/libDATlib.a(DATc.o) (__mulsi3)
+c:\neodev/m68k/lib/libgcc.a(_udivsi3.o)
+                              c:\neodev/m68k/lib/libc.a(vsprintf.o) (__udivsi3)
+c:\neodev/m68k/lib/libgcc.a(_umodsi3.o)
+                              c:\neodev/m68k/lib/libc.a(vsprintf.o) (__umodsi3)
+c:\neodev/m68k/lib/libgcc.a(fpgnulib.o)
+                              c:\neodev/tmp/main.o (__truncdfsf2)
+
+Allocating common symbols
+Common symbol       size              file
+
+TIreload            0x4               c:\neodev/m68k/lib/libDATlib.a(DATc.o)
+p2e                 0x1               c:\neodev/tmp/main.o
+TIcurrentData       0x4               c:\neodev/m68k/lib/libDATlib.a(DATc.o)
+p2                  0x1               c:\neodev/tmp/main.o
+ps                  0x1               c:\neodev/tmp/main.o
+DAT_droppedFrames   0x4               c:\neodev/m68k/lib/libDATlib.a(DATc.o)
+___strtok           0x4               c:\neodev/m68k/lib/libc.a(stdlib.o)
+TIbase              0x4               c:\neodev/m68k/lib/libDATlib.a(DATc.o)
+_sbrk_base1         0x4               c:\neodev/m68k/lib/libc.a(stdlib.o)
+freeCols            0x15              c:\neodev/m68k/lib/libDATlib.a(DATc.o)
+SC234ptr            0x4               c:\neodev/m68k/lib/libDATlib.a(DATc.o)
+p1e                 0x1               c:\neodev/tmp/main.o
+DAT_frameCounter    0x4               c:\neodev/m68k/lib/libDATlib.a(DATc.o)
+PALJOBS             0x808             c:\neodev/m68k/lib/libDATlib.a(DATc.o)
+SC1                 0xbe0             c:\neodev/m68k/lib/libDATlib.a(DATc.o)
+palJobsPtr          0x4               c:\neodev/m68k/lib/libDATlib.a(DATc.o)
+p1                  0x1               c:\neodev/tmp/main.o
+DAT_drawListReady   0x2               c:\neodev/m68k/lib/libDATlib.a(DATc.o)
+DAT_vbl_flag        0x2               c:\neodev/m68k/lib/libDATlib.a(DATc.o)
+DAT_TIfunc          0x44              c:\neodev/m68k/lib/libDATlib.a(DATc.o)
+LSPCmode            0x2               c:\neodev/m68k/lib/libDATlib.a(DATc.o)
+TIcurrentBase       0x4               c:\neodev/m68k/lib/libDATlib.a(DATc.o)
+SC234               0x11d0            c:\neodev/m68k/lib/libDATlib.a(DATc.o)
+bkp_data            0x100             c:\neodev/tmp/main.o
+_sbrk_base2         0x4               c:\neodev/m68k/lib/libc.a(stdlib.o)
+SC1ptr              0x4               c:\neodev/m68k/lib/libDATlib.a(DATc.o)
+DAT_scratch64       0x40              c:\neodev/m68k/lib/libDATlib.a(DATc.o)
+TInextTable         0x4               c:\neodev/m68k/lib/libDATlib.a(DATc.o)
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+rama             0x00000000         0x0010e000         xrw
+ramb             0x00120000         0x000e0000         xrw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+                0x80000074                .=(0x80000000+SIZEOF_HEADERS)
+
+.interp
+ *(.interp)
+
+.hash
+ *(.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rel.init
+ *(.rel.init)
+
+.rela.init
+ *(.rela.init)
+
+.rel.text
+ *(.rel.text)
+ *(.rel.text.*)
+ *(.rel.gnu.linkonce.t*)
+
+.rela.text
+ *(.rela.text)
+ *(.rela.text.*)
+ *(.rela.gnu.linkonce.t*)
+
+.rel.fini
+ *(.rel.fini)
+
+.rela.fini
+ *(.rela.fini)
+
+.rel.rodata
+ *(.rel.rodata)
+ *(.rel.rodata.*)
+ *(.rel.gnu.linkonce.r*)
+
+.rela.rodata
+ *(.rela.rodata)
+ *(.rela.rodata.*)
+ *(.rela.gnu.linkonce.r*)
+
+.rel.data
+ *(.rel.data)
+ *(.rel.data.*)
+ *(.rel.gnu.linkonce.d*)
+
+.rela.data
+ *(.rela.data)
+ *(.rela.data.*)
+ *(.rela.gnu.linkonce.d*)
+
+.rel.ctors
+ *(.rel.ctors)
+
+.rela.ctors
+ *(.rela.ctors)
+
+.rel.dtors
+ *(.rel.dtors)
+
+.rela.dtors
+ *(.rela.dtors)
+
+.rel.got
+ *(.rel.got)
+
+.rela.got
+ *(.rela.got)
+
+.rel.sdata
+ *(.rel.sdata)
+ *(.rel.sdata.*)
+ *(.rel.gnu.linkonce.s*)
+
+.rela.sdata
+ *(.rela.sdata)
+ *(.rela.sdata.*)
+ *(.rela.gnu.linkonce.s*)
+
+.rel.sbss
+ *(.rel.sbss)
+
+.rela.sbss
+ *(.rela.sbss)
+
+.rel.bss
+ *(.rel.bss)
+
+.rela.bss
+ *(.rela.bss)
+
+.rel.plt
+ *(.rel.plt)
+
+.rela.plt
+ *(.rela.plt)
+
+.init
+ *(.init)
+
+.plt
+ *(.plt)
+
+.text           0x00000000    0x12df0
+ *(.text)
+ .text          0x00000000      0x238 c:\neodev/tmp/crt0_cd.o
+                0x00000152                _start
+                0x0000014e                atexit
+ .text          0x00000238     0x16f2 c:\neodev/tmp/main.o
+                0x00000d1a                pictureDemo
+                0x000018c8                sortSprites
+                0x00001126                rasterScrollDemo
+                0x000017b0                main
+                0x0000161a                tempTests
+                0x00000238                scrollerDemo
+                0x0000054a                aSpriteDemo
+ *fill*         0x0000192a        0x2 20085
+ .text          0x0000192c      0x4d4 c:\neodev/tmp/palettes.o
+                0x00001d36                topleft_Palettes
+                0x0000192c                ffbg_a_Palettes
+                0x00001d14                terrypict_Palettes
+                0x000019ce                ffbg_b_Palettes
+                0x00001dde                bmary_spr_Palettes
+                0x00001d7a                gradient_Palettes
+                0x00001d9c                tf4layers_Palettes
+                0x00001cd0                wohd_Palettes
+                0x00001d58                pointer_Palettes
+                0x00001cf2                ffbg_c_Palettes
+ .text          0x00001e00     0xd68e c:\neodev/tmp/maps.o
+                0x0000ceec                bmary_spr
+                0x00002150                ffbg_b
+                0x00001e00                ffbg_a
+                0x0000a9e0                terrypict
+                0x0000ae20                pointer
+                0x0000a900                ffbg_c
+                0x0000adf8                topleft
+                0x0000aed4                tf4layers
+                0x0000ae3c                gradient
+                0x00002b58                wohd
+ *fill*         0x0000f48e        0x2 20085
+ .text          0x0000f490      0xb5e c:\neodev/m68k/lib/libDATlib.a(DATc.o)
+                0x0000f4da                scrollerInit
+                0x0000f886                scrollerSetPos
+                0x0000f490                fixPrintf
+                0x0000ffcc                SCReset
+                0x0000ffba                waitVBlank
+                0x0000ff4a                initGfx
+                0x0000ff9c                SCClose
+                0x0000ff3a                enableIRQ
+                0x0000ff42                disableIRQ
+ *fill*         0x0000ffee        0x2 20085
+ .text          0x0000fff0      0x9b0 c:\neodev/m68k/lib/libDATlib.a(DATasm.o)
+                0x0001002a                jobMeterSetup
+                0x000105c6                DAT_vblankTI
+                0x00010670                loadTIirq
+                0x0000fff0                tempStuff
+                0x00010474                DAT_vblank
+                0x00010086                clearSprites
+                0x00010658                unloadTIirq
+                0x00010146                fixPrint
+                0x000100e4                fixPrintf2
+                0x00010210                clearFixLayer
+                0x0001019a                setup4P
+ .text          0x000109a0      0x264 c:\neodev/m68k/lib/libDATlib.a(PICTasm.o)
+                0x00010b5a                pictureMove
+                0x00010b02                pictureSetPos
+                0x000109a0                pictureInit
+                0x00010bb2                pictureHide
+                0x00010a84                pictureSetFlip
+                0x00010bd2                pictureShow
+ .text          0x00010c04      0x3fc c:\neodev/m68k/lib/libDATlib.a(ASasm.o)
+                0x00010e24                aSpriteAnimate
+                0x00010f38                aSpriteSetAnim
+                0x00010f7e                aSpriteSetPos
+                0x00010d02                aSpritePush_int
+                0x00010fb4                aSpriteMove
+                0x00010fe6                aSpriteSetFlip
+                0x00010d98                aSpritePushPos_int
+                0x00010c04                aSpriteInit
+ .text          0x00011000      0x786 c:\neodev/m68k/lib/libDATlib.a(sprPool.o)
+                0x00011062                spritePoolClose
+                0x00011000                spritePoolInit
+                0x00011162                spritePoolDrawList
+                0x000111c4                dbgtest
+                0x000112d0                gap
+ *fill*         0x00011786        0x2 20085
+ .text          0x00011788       0x52 c:\neodev/m68k/lib/libc.a(stdlib.o)
+                0x00011788                sbrk
+ *fill*         0x000117da        0x2 20085
+ .text          0x000117dc      0x406 c:\neodev/m68k/lib/libc.a(vsprintf.o)
+                0x000117dc                vsprintf
+                0x00011bc4                sprintf
+ *fill*         0x00011be2        0x2 20085
+ .text          0x00011be4      0x128 c:\neodev/m68k/lib/libc.a(memory.o)
+                0x00011c44                memmove
+                0x00011be4                memcpy
+                0x00011cac                memset
+ .text          0x00011d0c      0x2fe c:\neodev/m68k/lib/libc.a(string.o)
+                0x00011dce                strcpy
+                0x00011f0a                strnlen
+                0x00011ec2                strrchr
+                0x00011e04                strcat
+                0x00011fa2                strstr
+                0x00011e72                strncmp
+                0x00011de2                strncpy
+                0x00011d0c                strtok
+                0x00011da6                memcmp
+                0x00011e26                strncat
+                0x00011e54                strcmp
+                0x00011f36                strspn
+                0x00011ef2                strlen
+                0x00011ea2                strchr
+                0x00011f74                strpbrk
+ *fill*         0x0001200a        0x2 20085
+ .text          0x0001200c       0xa2 c:\neodev/m68k/lib/libgcc.a(__main.o)
+                0x00012090                __main
+                0x0001200c                __do_global_dtors
+                0x00012034                __do_global_ctors
+ *fill*         0x000120ae        0x2 20085
+ .text          0x000120b0       0x2e c:\neodev/m68k/lib/libgcc.a(_divsi3.o)
+                0x000120b0                __divsi3
+ *fill*         0x000120de        0x2 20085
+ .text          0x000120e0      0x9aa c:\neodev/m68k/lib/libgcc.a(_double.o)
+                0x00012960                __cmpdf2
+                0x00012140                __adddf3
+                0x00012900                __negdf2
+                0x0001267e                __divdf3
+                0x000124ca                __muldf3
+                0x0001213a                __subdf3
+ *fill*         0x00012a8a        0x2 20085
+ .text          0x00012a8c       0x6c c:\neodev/m68k/lib/libgcc.a(_floatex.o)
+                0x00012a9a                $_exception_handler
+                0x00012a8c                __clear_sticky_bit
+ .text          0x00012af8       0x2e c:\neodev/m68k/lib/libgcc.a(_modsi3.o)
+                0x00012af8                __modsi3
+ *fill*         0x00012b26        0x2 20085
+ .text          0x00012b28       0x22 c:\neodev/m68k/lib/libgcc.a(_mulsi3.o)
+                0x00012b28                __mulsi3
+ *fill*         0x00012b4a        0x2 20085
+ .text          0x00012b4c       0x5c c:\neodev/m68k/lib/libgcc.a(_udivsi3.o)
+                0x00012b4c                __udivsi3
+ .text          0x00012ba8       0x2e c:\neodev/m68k/lib/libgcc.a(_umodsi3.o)
+                0x00012ba8                __umodsi3
+ *fill*         0x00012bd6        0x2 20085
+ .text          0x00012bd8      0x208 c:\neodev/m68k/lib/libgcc.a(fpgnulib.o)
+                0x00012dc2                __fixsfsi
+                0x00012bd8                __floatsidf
+                0x00012c74                __extendsfdf2
+                0x00012d44                __fixdfsi
+                0x00012c58                __floatsisf
+                0x00012cca                __truncdfsf2
+ *(.text.*)
+ *(.stub)
+ *(.gnu.warning)
+ *(.gnu.linkonce.t*)
+                0x00012de0                .=ALIGN(0x4)
+                0x00012de0                __CTOR_LIST__=.
+                0x00012de0        0x4 LONG 0x0 (((__CTOR_END__-__CTOR_LIST__)/0x4)-0x2)
+ *(.ctors)
+                0x00012de4        0x4 LONG 0x0
+                0x00012de8                __CTOR_END__=.
+                0x00012de8                __DTOR_LIST__=.
+                0x00012de8        0x4 LONG 0x0 (((__DTOR_END__-__DTOR_LIST__)/0x4)-0x2)
+ *(.dtors)
+                0x00012dec        0x4 LONG 0x0
+                0x00012df0                __DTOR_END__=.
+                0x00012df0                _etext=.
+                0x00012df0                PROVIDE (etext, .)
+
+.fini
+ *(.fini)
+
+.rodata         0x00012df0      0x268
+ *(.rodata)
+ .rodata        0x00012df0      0x1e1 c:\neodev/tmp/main.o
+                0x00012e52                sinTable
+ .rodata        0x00012fd1       0x36 c:\neodev/m68k/lib/libDATlib.a(DATc.o)
+ .rodata        0x00013007       0x28 c:\neodev/m68k/lib/libc.a(stdlib.o)
+ .rodata        0x0001302f       0x29 c:\neodev/m68k/lib/libc.a(vsprintf.o)
+ *(.rodata.*)
+ *(.gnu.linkonce.r*)
+
+.rodata1
+ *(.rodata1)
+                0x00013068                .=(ALIGN(0x10)+(.&0xf))
+
+.data           0x00013058       0x40
+ *(.data)
+ .data          0x00013058        0x8 c:\neodev/m68k/lib/libc.a(vsprintf.o)
+ .data          0x00013060        0x8 c:\neodev/m68k/lib/libgcc.a(__main.o)
+                0x00013064                _exit_dummy_ref
+ .data          0x00013068       0x10 c:\neodev/m68k/lib/libgcc.a(_ctors.o)
+ .data          0x00013078        0x4 c:\neodev/m68k/lib/libgcc.a(_exit.o)
+                0x00013078                _exit_dummy_decl
+ .data          0x0001307c       0x1c c:\neodev/m68k/lib/libgcc.a(_floatex.o)
+                0x0001307c                _fpCCR
+ *(.data.*)
+ *(.gnu.linkonce.d*)
+
+.data1
+ *(.data1)
+
+.eh_frame
+ *(.eh_frame)
+
+.gcc_except_table
+ *(.gcc_except_table)
+
+.ctors
+ *crtbegin.o(.ctors)
+ EXCLUDE_FILE ( *crtend.o)*(.ctors)
+ *(SORT(.ctors.*))
+ *(.ctors)
+
+.dtors
+ *crtbegin.o(.dtors)
+ EXCLUDE_FILE ( *crtend.o)*(.dtors)
+ *(SORT(.dtors.*))
+ *(.dtors)
+
+.got
+ *(.got.plt)
+ *(.got)
+
+.dynamic
+ *(.dynamic)
+
+.sdata
+ *(.sdata)
+ *(.sdata.*)
+ *(.gnu.linkonce.s.*)
+                0x00013098                _edata=.
+                0x00013098                PROVIDE (edata, .)
+                0x00013098                __bss_start=.
+
+.sbss
+ *(.dynsbss)
+ *(.sbss)
+ *(.sbss.*)
+ *(.scommon)
+
+.bss            0x000130a0     0x27a0
+ *(.dynbss)
+ *(.bss)
+ .bss           0x000130a0        0x4 c:\neodev/m68k/lib/libgcc.a(__main.o)
+ *(.bss.*)
+ *(COMMON)
+ COMMON         0x000130a4      0x106 c:\neodev/tmp/main.o
+                                  0x0 (size before relaxing)
+                0x000130a4                p2e
+                0x000130a5                p2
+                0x000130a6                ps
+                0x000130a7                p1e
+                0x000130a8                p1
+                0x000130aa                bkp_data
+ *fill*         0x000131aa        0x6
+ COMMON         0x000131b0     0x2684 c:\neodev/m68k/lib/libDATlib.a(DATc.o)
+                                  0x0 (size before relaxing)
+                0x000131b0                TIreload
+                0x000131b4                TIcurrentData
+                0x000131b8                DAT_droppedFrames
+                0x000131bc                TIbase
+                0x000131c0                freeCols
+                0x000131d6                SC234ptr
+                0x000131da                DAT_frameCounter
+                0x000131de                PALJOBS
+                0x000139e6                SC1
+                0x000145c6                palJobsPtr
+                0x000145ca                DAT_drawListReady
+                0x000145cc                DAT_vbl_flag
+                0x000145ce                DAT_TIfunc
+                0x00014612                LSPCmode
+                0x00014614                TIcurrentBase
+                0x00014618                SC234
+                0x000157e8                SC1ptr
+                0x000157f0                DAT_scratch64
+                0x00015830                TInextTable
+ COMMON         0x00015834        0xc c:\neodev/m68k/lib/libc.a(stdlib.o)
+                                  0x0 (size before relaxing)
+                0x00015834                ___strtok
+                0x00015838                _sbrk_base1
+                0x0001583c                _sbrk_base2
+                0x00015840                .=ALIGN(0x4)
+                0x00015840                .=ALIGN(0x4)
+                0x00015840                _end=.
+                0x00015840                PROVIDE (end, .)
+
+.stab           0x00000000     0x3e34
+ *(.stab)
+ .stab          0x00000000     0x111c c:\neodev/m68k/lib/libDATlib.a(DATc.o)
+ .stab          0x0000111c      0x228 c:\neodev/m68k/lib/libc.a(stdlib.o)
+                                0x2dc (size before relaxing)
+ .stab          0x00001344      0x9e4 c:\neodev/m68k/lib/libc.a(vsprintf.o)
+                                0xac8 (size before relaxing)
+ .stab          0x00001d28     0x1188 c:\neodev/m68k/lib/libc.a(string.o)
+                               0x123c (size before relaxing)
+ .stab          0x00002eb0      0x6fc c:\neodev/m68k/lib/libgcc.a(__main.o)
+                                0x720 (size before relaxing)
+ .stab          0x000035ac      0x33c c:\neodev/m68k/lib/libgcc.a(_ctors.o)
+                                0x6e4 (size before relaxing)
+ .stab          0x000038e8      0x330 c:\neodev/m68k/lib/libgcc.a(_exit.o)
+                                0x6d8 (size before relaxing)
+ .stab          0x00003c18      0x21c c:\neodev/m68k/lib/libgcc.a(fpgnulib.o)
+                                0x228 (size before relaxing)
+
+.stabstr        0x00000000     0x2c54
+ *(.stabstr)
+ .stabstr       0x00000000     0x2c54 c:\neodev/m68k/lib/libDATlib.a(DATc.o)
+                                  0x0 (size before relaxing)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment        0x00000000      0x156
+ *(.comment)
+ .comment       0x00000000       0x26 c:\neodev/tmp/main.o
+ .comment       0x00000026       0x26 c:\neodev/m68k/lib/libDATlib.a(DATc.o)
+ .comment       0x0000004c       0x26 c:\neodev/m68k/lib/libc.a(stdlib.o)
+ .comment       0x00000072       0x26 c:\neodev/m68k/lib/libc.a(vsprintf.o)
+ .comment       0x00000098       0x26 c:\neodev/m68k/lib/libc.a(string.o)
+ .comment       0x000000be       0x26 c:\neodev/m68k/lib/libgcc.a(__main.o)
+ .comment       0x000000e4       0x26 c:\neodev/m68k/lib/libgcc.a(_ctors.o)
+ .comment       0x0000010a       0x26 c:\neodev/m68k/lib/libgcc.a(_exit.o)
+ .comment       0x00000130       0x26 c:\neodev/m68k/lib/libgcc.a(fpgnulib.o)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges
+ *(.debug_aranges)
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info
+ *(.debug_info)
+
+.debug_abbrev
+ *(.debug_abbrev)
+
+.debug_line
+ *(.debug_line)
+
+.debug_frame
+ *(.debug_frame)
+
+.debug_str
+ *(.debug_str)
+
+.debug_loc
+ *(.debug_loc)
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+LOAD c:\neodev/tmp/crt0_cd.o
+LOAD c:\neodev/tmp/main.o
+LOAD c:\neodev/tmp/palettes.o
+LOAD c:\neodev/tmp/maps.o
+LOAD c:\neodev/m68k/lib/libDATlib.a
+LOAD c:\neodev/m68k/lib/libprocess.a
+LOAD c:\neodev/m68k/lib/libc.a
+LOAD c:\neodev/m68k/lib/libgcc.a
+OUTPUT(test.o elf32-m68k)
